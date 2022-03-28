@@ -39,8 +39,8 @@ W3 schools tutorials for defining functions, dynamic elements. Web Dev Simplifie
 
 ## Screenshot
 
-![alt="Screenshot of Landing Page"](assets/Screenshot.png)
+![alt="Screenshot of Landing Page"](assets/images/Screenshot.png)
 
 ## Link to deployed page
 
-[Password Generator]( https://cpriyam90.github.io/code-quiz/)
+[Coding Quiz]( https://cpriyam90.github.io/code-quiz/)
