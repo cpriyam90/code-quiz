@@ -104,16 +104,16 @@ function setStatusClass(element, correct) {
 //Question Array
 var questions = [
     {
-      question: 'What does CSS stand for?',
+      question: 'What are string values enclosed within when being assigned to variables in JS?',
       answers: [
-        { text: 'Cascading Style Sheet', correct: true },
-        { text: 'Center Stage Show', correct: false },
-        { text: 'Center Sinlge Shadow', correct: false },
-        { text: 'Cat Shaking Shook', correct: false }
+        { text: 'parenthesis', correct: true },
+        { text: 'curly brackets', correct: false },
+        { text: 'exclamation points', correct: false },
+        { text: 'uppercase', correct: false }
       ]
     },
     {
-      question: 'Which symbol identifies ID in css?',
+      question: 'Which symbol identifies ID in JS?',
       answers: [
         { text: '*', correct: false },
         { text: '%', correct: false },
@@ -131,11 +131,11 @@ var questions = [
       ]
     },
     {
-      question: 'What does HTML stand for?',
+      question: 'What does DOM stand for?',
       answers: [
         { text: 'Hyper Type Median Language', correct: false },
-        { text: 'Hyper Text Markup Language', correct: true },
-        { text: 'High Tenth Made Language', correct: false },
+        { text: 'Document Object Model', correct: true },
+        { text: 'Dell Tenth Made Language', correct: false },
         { text: 'Head The Main Language', correct: false },
       ]
     }
