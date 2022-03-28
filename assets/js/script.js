@@ -83,6 +83,7 @@ function selectAnswer (e){
     timerEl.classList.add("hide")
     clearInterval(setTime)
     highscoreButton.classList.remove("hide")
+    prompt("Quiz has ended.Well Done!")
   }
 }
 

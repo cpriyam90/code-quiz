@@ -39,7 +39,7 @@ W3 schools tutorials for defining functions, dynamic elements. Web Dev Simplifie
 
 ## Screenshot
 
-![alt="Screenshot of Landing Page"](assets/images/Screenshot.png)
+![alt="Screenshot of Landing Page"](./assets/images/screenshot.png)
 
 ## Link to deployed page
 
