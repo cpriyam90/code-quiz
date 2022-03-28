@@ -3,25 +3,69 @@ var questionContainer = document.getElementById("questions-container")
 var highscoreButton = document.getElementById("highscore-btn")
 var homePage = document.getElementById("home")
 
+let shuffledQuestions, currentQuestionIndex
+
 startButton.addEventListener("click",startGame)
 
-
 function startGame (){
-    console.log("started")
     startButton.classList.add("hide")
     highscoreButton.classList.add("hide")
     homePage.classList.add("hide")
     questionContainer.classList.remove("hide")
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    setNextQuestion()
 
 }
 
 function setNextQuestion () {
-
+    showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function selectAnswer (){
 
 }
+//Question Array
+var questions = [
+    {
+      question: 'What does CSS stand for?',
+      answers: [
+        { text: 'Cascading Style Sheet', correct: true },
+        { text: 'Center Stage Show', correct: false },
+        { text: 'Center Sinlge Shadow', correct: false },
+        { text: 'Cat Shaking Shook', correct: false }
+      ]
+    },
+    {
+      question: 'Which symbol identifies ID in css?',
+      answers: [
+        { text: '*', correct: false },
+        { text: '%', correct: false },
+        { text: '!', correct: false },
+        { text: '#', correct: true }
+      ]
+    },
+    {
+      question: 'Select an example of comments in JS?',
+      answers: [
+        { text: '<!--Hello--!>', correct: false },
+        { text: '//Hello', correct: true },
+        { text: '/*Hello*/', correct: false },
+        { text: '!Hello!', correct: false }
+      ]
+    },
+    {
+      question: 'What does HTML stand for',
+      answers: [
+        { text: 'Hyper Type Median Language', correct: false },
+        { text: 'Hyper Text Markup Language', correct: true },
+        { text: 'High Tenth Made Language', correct: false },
+        { text: 'Head The Main Language', correct: false },
+      ]
+    }
+  ]
+
+
 
 
 
