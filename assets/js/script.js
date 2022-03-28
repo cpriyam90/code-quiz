@@ -6,6 +6,8 @@ var highscoreButton = document.getElementById("highscore-btn")
 var homePage = document.getElementById("home")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
+var timerEl = document.getElementById("timer");
+var time = 45
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -24,13 +26,26 @@ function startGame (){
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     setNextQuestion()
+    timerEl.classList.remove("hide");
+    setTime()
 }
+
+function setTime(){
+    counter = setInterval(function(){
+        time--;
+        timer.textContent = time;
+        if (time===0){
+            clearInterval(setTime);
+            }
+        },1000)
+    }
 
 //Create a function to display next questions
 function setNextQuestion () {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
+
 
 function showQuestion(question) {
     questionElement.innerText = question.question
@@ -65,8 +80,9 @@ function selectAnswer (e){
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide")
   } else {
-    startButton.innerText = "Restart"
-    startButton.classList.remove("hide")
+    timerEl.classList.add("hide")
+    clearInterval(setTime)
+    highscoreButton.classList.remove("hide")
   }
 }
 
@@ -124,118 +140,3 @@ var questions = [
       ]
     }
   ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   var highscoreButton = document.getElementById("highscore-btn")
-//   var homePage = document.getElementById("home")
-
-// highscoreButton.classList.add("hide")
-//     homePage.classList.add("hide")
-
-
-
-
-
-
-
-// var startBtn = document.getElementById("start-btn");
-// var timer = document.getElementById("timer");
-// var questionContainer = document.getElementById("question-container");
-// var questionText = document.getElementById("question-text");
-// var answerContainer = document.getElementById("answer-container");
-// var nextBtn = document.getElementById("next-btn");
-// var questions = [
-//     {
-//         question: "1+1", 
-//         answers: [
-//             "2", "4", "6", "10"
-//         ],
-//         correctAnswer: "2"
-//     },
-//     {
-//         question: "2+2", 
-//         answers: [
-//             "2", "4", "6", "11"
-//         ],
-//         correctAnswer: "4"
-//     },
-//     {
-//         question: "3+3", 
-//         answers: [
-//             "2", "4", "6", "12"
-//         ],
-//         correctAnswer: "6"
-//     },
-// ];
-
-// var questionsIndex = 0
-
-// function showQuestion(Q){
-//     for (var i =0; i < questions.length; i++){
-//         // console.log(questions[i].question);
-//         // console.log(questions[i].answers);
-//         questionText.innerHTML = questions[i].question;
-//         var answerslist = questions[i].answers;
-//     }
-//     for (var i=0; i < 4; i++){
-//         var answerBtn = document.createElement("button");
-//         answerBtn.textContent = answerslist[i];
-//         answerContainer.appendChild(answerBtn);
-//     }   
-// }
-// showQuestion()
-// var time = 30;
-// var counter;
-// function setTime(){
-//     counter = setInterval(function(){
-//         time--;
-//         timer.textContent = time;
-//         if (time==0){
-//             clearInterval(time);
-//         }
-//     },1000)
-    
-// }
-// setTime();
