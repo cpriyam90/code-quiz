@@ -1,5 +1,8 @@
 :root {
-    background-color: #D3D3D3;
+    --hue-nuetral: #D3D3D3;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+
 }
 
 * {
@@ -10,10 +13,35 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #D3D3D3;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.correct {
+    --hue:var(--hue-correct);
+}
+
+body.wrong {
+    --hue:var(--hue-wrong);
+}
+
 h1 {
     font-size: 5.4rem;
     color: #4169E1;
     margin-bottom: 5rem;
+    text-align: center;
+}
+
+h1 p {
+    font-size: 3.4 rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
@@ -22,26 +50,25 @@ h2 {
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
+    width: 800px;
+    max-width: 80%;
+    background-color: azure;
+    border-radius: 5px;
+    padding:10px;
+    box-shadow: 0 0 10px 2px;
 }
 
 .btn {
     font-size: x-large;
-    padding: 2 rem 0;
+    padding: 10px;
     width: 30 rem;
     margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
     color: white;
-    background-color: #00008B;
-    border-radius: 10%;
-
+    background-color: #00648b;
+    border-radius: 5px;
+    border: solid 1px #00648b;
 }
 
 .btn:hover {
@@ -49,27 +76,29 @@ h2 {
     opacity: 0.5;
 }
 
-.btn[disabled]:hover {
-    cursor: not-allowed;
+.btn.correct {
+    --hue: var(--hue-correct)
 }
 
-.flex-column {
-    display: flex;flex-direction: column;
+.btn.wrong {
+    --hue: var(--hue-wrong)
 }
 
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
 
-.justify-center {
-    justify-content: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.hidden {
+.hide {
     display: none;
 }
+
+.answer-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }

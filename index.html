@@ -7,21 +7,37 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css"></link>
 </head>
+
+<!--Body Section-->
 <body>
+    <!--Landing Page-->
     <div class="container">
-        <div id="home" class="flex-column flex-center">
-          <h2 id="timer">Time: </h2>  
-          <h1>Ready to take the quiz?</h1>  
-          <a href="/game.html"class=btn>Play</a>
-          <a href="/highscores.html" id="highscore-btn" class=btn>High Scores</a>
+        <div id="home" class="flex-column flex-center"> 
+          <h1>Ready to take the quiz?
+              <p>Answer the following coding related questions in the time remaining.
+                  Save your progress to see how you did.
+              </p>
+          </h1>
+        <div class="controls" id="controls">  
+          <button class="btn start-btn" id="start-btn">Start</button>
+          <button class="btn next-btn hide">Next</button>
+          <button class="btn highscore-btn" id="highscore-btn">High Scores</button>
         </div>
-   <!-- <button id="start-btn"> Start</button> 
-   <div id="timer">Time: </div>
-   <div id="questions-container">
-       <h2 id="question-text">Question</h2>
-       <div id="answer-container">Answer</div>
-       <button id="next-btn">Next</button> -->
-   </div>
+    </div>
+
+    <!--Questions Container-->
+    <div id="questions-container" class="hide">
+        <h2 id="timer" class="hide">Time: </h2>  
+        <div id="question">Questions</div>
+        <div id="answer-grid" class="answer-grid">
+            <div class="answers">Answer 1</div>
+            <div class="answers">Answer 2</div>
+            <div class="answers">Answer 3</div>
+            <div class="answers">Answer 4</div>
+        </div>
+    </div>    
+        
+  
 <script src="./assets/js/script.js"></script>
 </body>
 </html>
